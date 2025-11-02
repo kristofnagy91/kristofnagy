@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kristóf Nagy — Historical Anthropologist & Sociologist</title>
+  <style>
+    @font-face {
+      font-family: 'Inter';
+      src: url('Inter-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: #fafafa;
+      color: #1e293b;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 6rem;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin: 0;
+      letter-spacing: -0.01em;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #475569;
+      margin-left: 2rem;
+      font-size: 1.5rem;
+    }
+
+    nav a:hover {
+      color: #1e293b;
+      text-decoration: underline;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 2rem 6rem 4rem;
+      box-sizing: border-box;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 960px;
+      line-height: 1.75;
+      margin-top: 6%;
+    }
+
+    .text {
+      max-width: 600px;
+    }
+
+    img {
+      width: 260px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(15,23,42,0.08);
+      object-fit: cover;
+      align-self: stretch;
+    }
+
+    p {
+      font-size: 1.05rem;
+      margin: 0 0 1.25rem 0;
+      text-align: justify;
+    }
+
+    .contact {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 6rem; /* aligns with the layout padding */
+      font-size: 1.5rem;
+      color: #475569;
+    }
+
+    .contact a {
+      color: #475569;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      color: #1e293b;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem 2rem;
+      }
+      nav {
+        margin-top: 1rem;
+      }
+      main {
+        padding: 2rem;
+      }
+      .container {
+        flex-direction: column-reverse;
+        align-items: center;
+      }
+      img {
+        width: 200px;
+        margin-bottom: 1.5rem;
+      }
+      .contact {
+        right: 2rem;
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Kristóf Nagy</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="publications.html">Publications</a>
+      <a href="research.html">Research</a>
+      <a href="teaching.html">Teaching & Learning</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="text">
+        <p>
+          Kristóf Nagy is a historical anthropologist and sociologist specializing in the cultural politics of contemporary far-right governments. With a background in art history from the Courtauld Institute of Art and a Ph.D. in social sciences from Central European University, his research explores the intersections of imperialism, cultural infrastructures and far-right culture wars through ethnographic and historical methods.
+        </p>
+        <p>
+          As a Fung Global Fellow at Princeton University, in 2025/2026 he is developing his first monograph on far-right cultural policies and their global historical connections, centering the case of Hungary as a laboratory for contemporary culture wars. For seven years, he has edited <em>Fordulat</em>, a journal of left social theory.
+        </p>
+      </div>
+      <img src="images/kristof-nagy.jpg" alt="Portrait of Kristóf Nagy" />
+    </div>
+  </main>
+
+  <div class="contact">
+    contact: <a href="mailto:kn2656@princeton.edu">kn2656@princeton.edu</a>
+  </div>
+</body>
+</html>
