@@ -1,0 +1,193 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('Inter-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- Global layout --- */
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: #fafafa;
+  color: #1e293b;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* --- Header --- */
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 6rem;
+  box-sizing: border-box;
+}
+
+h1 a {
+  text-decoration: none;
+  color: #1e293b;
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  display: block;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: #475569;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+nav a:hover {
+  color: #1e293b;
+  text-decoration: underline;
+}
+
+/* --- Main content area --- */
+main {
+  flex: 1;
+  padding: 2rem 6rem 4rem;
+  box-sizing: border-box;
+  /* remove width cap so .container controls layout width */
+  max-width: none;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* --- Homepage layout --- */
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;        /* let text define width; no forced space-between */
+  width: 100%;
+  max-width: 1160px;                  /* wider overall canvas */
+  margin: 6% auto 0;                  /* center horizontally */
+  gap: 4rem;                          /* space between text and image */
+}
+
+.text {
+  flex: 1 1 740px;                    /* allow growth; preferred width ≈ 740px */
+  max-width: 780px;                   /* hard cap if screen is huge; tweak as you like */
+  line-height: 1.75;
+  padding-top: 0.5rem;
+}
+
+img {
+  flex-shrink: 0;                     /* keep image size stable */
+  width: 260px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(15,23,42,0.08);
+  object-fit: cover;
+  align-self: flex-start;
+}
+
+/* --- Typography --- */
+h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.05rem;
+  margin: 0 0 1.25rem 0;
+  text-align: justify;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+em {
+  font-style: italic;
+}
+
+/* --- Contact info --- */
+.contact {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 6rem;
+  font-size: 1.5rem;
+  color: #475569;
+}
+
+.contact a {
+  color: #475569;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  color: #1e293b;
+  text-decoration: underline;
+}
+
+/* --- Responsive layout --- */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem 2rem;
+  }
+
+  nav {
+    margin-top: 1rem;
+  }
+
+  main {
+    padding: 2rem;
+  }
+
+ .container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 1200px; /* overall layout width */
+  margin: 6% auto 0;
+  gap: 4rem;
+}
+
+.text {
+  flex: 0 0 700px; /* fixed text width */
+  max-width: 700px; /* ensures it stays 700px wide */
+  line-height: 1.75;
+  padding-top: 0.5rem;
+}
+
+img {
+  flex-shrink: 0;
+  width: 260px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(15,23,42,0.08);
+  object-fit: cover;
+  align-self: flex-start;
+}
+
+
+  .contact {
+    right: 2rem;
+    font-size: 1.2rem;
+  }
+}
