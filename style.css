@@ -79,8 +79,8 @@ main {
 }
 
 .text {
-  flex: 1 1 640px;                    /* allow growth; preferred width ≈ 740px */
-  max-width: 680px;                   /* hard cap if screen is huge; tweak as you like */
+  flex: 1 1 740px;                    /* allow growth; preferred width ≈ 740px */
+  max-width: 780px;                   /* hard cap if screen is huge; tweak as you like */
   line-height: 1.75;
   padding-top: 0.5rem;
 }
@@ -110,11 +110,12 @@ p {
 }
 
 a {
-  color: inherit;
+  color: #3b82f6;
   text-decoration: none;
 }
 
 a:hover {
+  color: #2563eb;
   text-decoration: underline;
 }
 
