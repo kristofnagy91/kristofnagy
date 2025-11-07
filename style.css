@@ -1,3 +1,4 @@
+/* --- Font setup --- */
 @font-face {
   font-family: 'Inter';
   src: url('font_new.woff2') format('woff2');
@@ -7,6 +8,15 @@
 }
 
 /* --- Global layout --- */
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 body {
   margin: 0;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -15,6 +25,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  line-height: 1.7;
 }
 
 /* --- Header --- */
@@ -23,31 +34,32 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 6rem;
+  padding: 2rem 6%;
   box-sizing: border-box;
+  flex-wrap: wrap;
 }
 
 h1 a {
   text-decoration: none;
   color: #1e293b;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 400;
   letter-spacing: -0.01em;
-  line-height: 1;
-  display: block;
+  line-height: 1.2;
 }
 
 nav {
   display: flex;
   gap: 2rem;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 nav a {
   text-decoration: none;
   color: #475569;
-  font-size: 1.5rem;
-  line-height: 1;
+  font-size: 1.2rem;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
 }
 
 nav a:hover {
@@ -58,12 +70,10 @@ nav a:hover {
 /* --- Main content area --- */
 main {
   flex: 1;
-  padding: 2rem 6rem 4rem;
+  padding: 2rem 6%;
   box-sizing: border-box;
-  /* remove width cap so .container controls layout width */
-  max-width: none;
   margin: 0 auto;
-  line-height: 1.7;
+  max-width: 1200px;
 }
 
 /* --- Homepage layout --- */
@@ -71,26 +81,26 @@ main {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: flex-start;        /* let text define width; no forced space-between */
+  justify-content: space-between;
   width: 100%;
-  max-width: 1160px;                  /* wider overall canvas */
-  margin: 6% auto 0;                  /* center horizontally */
-  gap: 4rem;                          /* space between text and image */
+  margin: 6% auto 0;
+  gap: 4rem;
+  flex-wrap: wrap;
 }
 
 .text {
-  flex: 1 1 740px;                    /* allow growth; preferred width ≈ 740px */
-  max-width: 780px;                   /* hard cap if screen is huge; tweak as you like */
-  line-height: 1.75;
+  flex: 1 1 600px;
+  max-width: 740px;
   padding-top: 0.5rem;
+  text-align: justify;
 }
 
 img {
-  flex-shrink: 0;                     /* keep image size stable */
+  flex-shrink: 0;
   width: 260px;
   height: auto;
   border-radius: 8px;
-  box-shadow: 0 8px 24px rgba(15,23,42,0.08);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
   object-fit: cover;
   align-self: flex-start;
 }
@@ -98,15 +108,21 @@ img {
 /* --- Typography --- */
 h2 {
   font-size: 1.5rem;
-  font-weight: 400;
+  font-weight: 500;
   margin-top: 2rem;
   margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
 }
 
 p {
   font-size: 1.05rem;
   margin: 0 0 1.25rem 0;
-  text-align: justify;
 }
 
 a {
@@ -127,9 +143,13 @@ em {
 .contact {
   position: fixed;
   bottom: 1.5rem;
-  right: 6rem;
-  font-size: 1.5rem;
+  right: 6%;
+  font-size: 1.2rem;
   color: #475569;
+  background: rgba(250, 250, 250, 0.9);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  backdrop-filter: blur(6px);
 }
 
 .contact a {
@@ -142,53 +162,87 @@ em {
   text-decoration: underline;
 }
 
+/* --- Lists --- */
+ul {
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
 /* --- Responsive layout --- */
+@media (max-width: 1024px) {
+  header {
+    padding: 1.5rem 4%;
+  }
+
+  main {
+    padding: 1.5rem 4%;
+  }
+
+  .container {
+    gap: 2rem;
+  }
+
+  nav a {
+    font-size: 1.1rem;
+  }
+}
+
 @media (max-width: 768px) {
   header {
     flex-direction: column;
     align-items: flex-start;
-    padding: 1.5rem 2rem;
+    padding: 1.5rem 1.5rem;
   }
 
   nav {
     margin-top: 1rem;
+    gap: 1rem;
   }
 
-  main {
-    padding: 2rem;
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
   }
 
- .container {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  width: 100%;
-  max-width: 1200px; /* overall layout width */
-  margin: 6% auto 0;
-  gap: 4rem;
-}
+  .text {
+    flex: 1 1 auto;
+    max-width: 100%;
+    text-align: left;
+  }
 
-.text {
-  flex: 0 0 700px; /* fixed text width */
-  max-width: 700px; /* ensures it stays 700px wide */
-  line-height: 1.75;
-  padding-top: 0.5rem;
-}
-
-img {
-  flex-shrink: 0;
-  width: 260px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 8px 24px rgba(15,23,42,0.08);
-  object-fit: cover;
-  align-self: flex-start;
-}
-
+  img {
+    width: 100%;
+    max-width: 320px;
+    align-self: center;
+  }
 
   .contact {
-    right: 2rem;
-    font-size: 1.2rem;
+    position: static;
+    margin: 2rem auto;
+    text-align: center;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 a {
+    font-size: 1.3rem;
+  }
+
+  nav a {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  img {
+    max-width: 280px;
   }
 }
