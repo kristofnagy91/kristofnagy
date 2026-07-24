@@ -7,18 +7,22 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
+
+  <header class="site-header">
     <h1><a href="index.html">Kristóf Nagy</a></h1>
-    <nav>
-      <a href="publications.html">Publications</a>
+    <nav class="site-nav">
+      <a href="index.html" class="is-active">Index</a>
       <a href="research.html">Research</a>
-      <a href="teaching.html">Teaching & Learning</a>
+      <a href="publications.html">Publications</a>
+      <a href="teaching.html">Teaching &amp; Learning</a>
     </nav>
   </header>
 
-  <main>
-    <div class="container">
-      <div class="text">
+  <section class="hero">
+    <div>
+      <h1 class="hero-name">Kristóf<br />Nagy</h1>
+      <p class="hero-role">Historical Anthropologist &amp; Sociologist</p>
+      <div class="hero-text">
         <p>
           Kristóf Nagy is a historical anthropologist and sociologist specializing in the cultural politics of contemporary far-right governments. With a background in art history from the Courtauld Institute of Art and a Ph.D. in social sciences from Central European University, his research explores the intersections of imperialism, cultural infrastructures and far-right culture wars through ethnographic and historical methods.
         </p>
@@ -26,12 +30,32 @@
           As a Fung Global Fellow at Princeton University in 2025/2026, he is developing his first monograph on far-right cultural policies and their global historical connections, centering the case of Hungary as a laboratory for contemporary culture wars. For seven years, he has edited <em>Fordulat</em>, a journal of left social theory.
         </p>
       </div>
-      <img src="images/kristof-nagy.jpg" alt="Portrait of Kristóf Nagy" />
     </div>
-  </main>
+    <div class="hero-portrait">
+      <img src="images/kristof-nagy.jpg" alt="Portrait of Kristóf Nagy" />
+      <span class="tag">Princeton, 2025/26</span>
+    </div>
+  </section>
 
-  <div class="contact">
-    contact: <a href="mailto:kn2656@princeton.edu">kn2656@princeton.edu</a>
+  <div class="hero-meta">
+    <div class="item">
+      <span class="label">Contact</span>
+      <a href="mailto:nagy.kristof@ppk.elte.hu">nagy.kristof@ppk.elte.hu</a>
+    </div>
+    <div class="item">
+      <span class="label">Affiliation</span>
+      Fung Global Fellow, Princeton University
+    </div>
+    <div class="item">
+      <span class="label">Editorial</span>
+      Editor, <em>Fordulat</em> — journal of left social theory
+    </div>
   </div>
+
+  <footer class="site-footer">
+    <span>&copy; Kristóf Nagy</span>
+    <a href="mailto:nagy.kristof@ppk.elte.hu">nagy.kristof@ppk.elte.hu</a>
+  </footer>
+
 </body>
 </html>
